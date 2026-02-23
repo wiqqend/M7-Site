@@ -105,6 +105,17 @@ function createLightbox() {
       let overlayCaption = document.createElement("figcaption");
       overlayCaption.textContent = overlayImage.alt;
       figurebox.appendChild(overlayCaption);
+
+      //add the close button to the overlay
+      let closeBox = document.createElement("div");
+      closeBox.id = "lbOverlayClose";
+      closeBox.innerHTML = "&times;";
+
+      closeBox.onclick = function() {
+         document.body.removeChild(overlay);
+         
+      }
+      overlay.appendChild(closeBox);
    }  
 
 
