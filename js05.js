@@ -35,12 +35,16 @@ function createLightbox() {
    lbCounter.textContent = currentImg + " / " + imgCount;
 
    // Design the lightbox previous button
+   lbPrev.innerHTML = "&#9664;";
    lightBox.appendChild(lbPrev);
    lbPrev.id = "lbPrev";
    // Design the lightbox next button
+   lbNext.innerHTML = "&#9654;";
    lightBox.appendChild(lbNext);
    lbNext.id = "lbNext";
    // Design the lightbox play/pause button
+
+   lbPlay.innerHTML = "&#9199;";
    lightBox.appendChild(lbPlay);
    lbPlay.id = "lbPlay";
    // Design the lightbox image box
