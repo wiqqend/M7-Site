@@ -10,6 +10,19 @@
       Filename: js05.js
 */
 
+window.addEventListener("load", createLightbox);
+
+function createLightbox() {
+   let lightbox = document.getElementById("lightbox");
+   
+   let lbTitle = document.createElement("h1");
+   let lbCounter = document.createElement("div");
+   let lbPrev = document.createElement("div");
+   let lbNext = document.createElement("div");
+   let lbPlay = document.createElement("div");
+   let lbImage = document.createElement("div");
+}
+
 window.addEventListener("load", setupGallery);
 
 function setupGallery() {
