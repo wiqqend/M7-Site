@@ -72,6 +72,7 @@ function createLightbox() {
       let image = document.createElement("img");
       image.src = imgFiles[i];
       image.alt = imgCaptions[i];
+      image.onclick = createOverlay;
       lbImages.appendChild(image);
    }
 
@@ -86,6 +87,16 @@ function createLightbox() {
       (currentImg > 1) ? currentImg-- : currentImg = imgCount;
       lbCounter.textContent = currentImg + " / " + imgCount;
    }
+
+   function createOverlay() {
+      let overlay = document.createElement("div");
+      overlay.id = "overlay";
+      //add the figbox to the overlay
+      let figurebox = document.createElement("figure");
+      overlay.appendChild(figurebox);
+   }  
+
+
 }
 
 
