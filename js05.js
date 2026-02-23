@@ -53,10 +53,15 @@ function createLightbox() {
    lbPlay.innerHTML = "&#9199;";
    let timeID;
    lbPlay.onclick = function() {
-      showNext();
-      timeID = window.setInterval(showNext, 1500);
+      if (timeID) {
+         window.clearInterval(timeID);
+         timeID = undefined;
+      } else {
+         showNext();
+         timeID = window.setInterval(showNext, 1500); 
+      }
    };
-   
+
 
    // Design the lightbox image box
    lightBox.appendChild(lbImages);
