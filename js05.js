@@ -90,10 +90,12 @@ function createLightbox() {
 
    function createOverlay() {
       let overlay = document.createElement("div");
-      overlay.id = "overlay";
+      overlay.id = "lbOverlay";
       //add the figbox to the overlay
       let figurebox = document.createElement("figure");
       overlay.appendChild(figurebox);
+
+      document.body.appendChild(overlay);
    }  
 
 
