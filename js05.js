@@ -20,7 +20,7 @@ function createLightbox() {
    let lbPrev = document.createElement("div");
    let lbNext = document.createElement("div");
    let lbPlay = document.createElement("div");
-   let lbImage = document.createElement("div");
+   let lbImages = document.createElement("div");
 
    // Lightbox title
    lightBox.appendChild(lbTitle);
@@ -35,30 +35,41 @@ function createLightbox() {
    lbCounter.textContent = currentImg + " / " + imgCount;
 
    // Design the lightbox previous button
-   lbPrev.innerHTML = "&#9664;";
    lightBox.appendChild(lbPrev);
    lbPrev.id = "lbPrev";
+   lbPrev.innerHTML = "&#9664;";
    // Design the lightbox next button
-   lbNext.innerHTML = "&#9654;";
+
    lightBox.appendChild(lbNext);
    lbNext.id = "lbNext";
+   lbNext.innerHTML = "&#9654;";
+   lbNext.onclick = showNext;
+
    // Design the lightbox play/pause button
 
-   lbPlay.innerHTML = "&#9199;";
    lightBox.appendChild(lbPlay);
    lbPlay.id = "lbPlay";
+   lbPlay.innerHTML = "&#9199;";
    // Design the lightbox image box
-   lightBox.appendChild(lbImage);
-   lbImage.id = "lbImage";
+   lightBox.appendChild(lbImages);
+   lbImages.id = "lbImages";
 
    //Add images from the imgfiles array to container
    for (let i = 0; i < imgCount; i++) {
       let image = document.createElement("img");
       image.src = imgFiles[i];
       image.alt = imgCaptions[i];
-      lbImage.appendChild(image);
+      lbImages.appendChild(image);
+   }
+
+   function showNext() {
+      lbImages.appendChild(lbImages.firstElementChild);
+      (currentImg < imgCount) ? currentImg++ : currentImg = 1;
+      lbCounter.textContent = currentImg + " / " + imgCount;
    }
 }
+
+
 
 window.addEventListener("load", setupGallery);
 
