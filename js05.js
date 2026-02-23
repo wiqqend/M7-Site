@@ -25,11 +25,15 @@ function createLightbox() {
    // Lightbox title
    lightBox.appendChild(lbTitle);
    lbTitle.id = "lbTitle";
-
+   lbTitle.textContent = lightboxTitle;
 
    // Design the lightbox slide counter
    lightBox.appendChild(lbCounter);
    lbCounter.id = "lbCounter";
+
+   let currentImg = 1;
+   lbCounter.textContent = currentImg + " / " + imgCount;
+
    // Design the lightbox previous button
    lightBox.appendChild(lbPrev);
    lbPrev.id = "lbPrev";
