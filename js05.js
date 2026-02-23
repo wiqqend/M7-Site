@@ -96,6 +96,15 @@ function createLightbox() {
       overlay.appendChild(figurebox);
 
       document.body.appendChild(overlay);
+
+      //add the image to the figbox
+      let overlayImage = this.cloneNode("true");
+      figurebox.appendChild(overlayImage);
+
+      //add caption to the figbox
+      let overlayCaption = document.createElement("figcaption");
+      overlayCaption.textContent = overlayImage.alt;
+      figurebox.appendChild(overlayCaption);
    }  
 
 
