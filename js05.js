@@ -42,6 +42,14 @@ function createLightbox() {
    // Design the lightbox image box
    lightBox.appendChild(lbImage);
    lbImage.id = "lbImage";
+
+   //Add images from the imgfiles array to container
+   for (let i = 0; i < imgCount; i++) {
+      let image = document.createElement("img");
+      image.src = imgFiles[i];
+      image.alt = imgCaptions[i];
+      lbImage.appendChild(image);
+   }
 }
 
 window.addEventListener("load", setupGallery);
