@@ -11,16 +11,37 @@
 */
 
 window.addEventListener("load", createLightbox);
-
+// Create the lightbox elements and add them to the page
 function createLightbox() {
-   let lightbox = document.getElementById("lightbox");
-   
+   let lightBox = document.getElementById("lightbox");
+   // Create the elements for the lightbox
    let lbTitle = document.createElement("h1");
    let lbCounter = document.createElement("div");
    let lbPrev = document.createElement("div");
    let lbNext = document.createElement("div");
    let lbPlay = document.createElement("div");
    let lbImage = document.createElement("div");
+
+   // Lightbox title
+   lightBox.appendChild(lbTitle);
+   lbTitle.id = "lbTitle";
+
+
+   // Design the lightbox slide counter
+   lightBox.appendChild(lbCounter);
+   lbCounter.id = "lbCounter";
+   // Design the lightbox previous button
+   lightBox.appendChild(lbPrev);
+   lbPrev.id = "lbPrev";
+   // Design the lightbox next button
+   lightBox.appendChild(lbNext);
+   lbNext.id = "lbNext";
+   // Design the lightbox play/pause button
+   lightBox.appendChild(lbPlay);
+   lbPlay.id = "lbPlay";
+   // Design the lightbox image box
+   lightBox.appendChild(lbImage);
+   lbImage.id = "lbImage";
 }
 
 window.addEventListener("load", setupGallery);
