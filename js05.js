@@ -4,8 +4,8 @@
       Chapter Case
 
       Application to generate a slide show
-      Author: 
-      Date:   
+      Author: jacob
+      Date:   2/23/26
 
       Filename: js05.js
 */
