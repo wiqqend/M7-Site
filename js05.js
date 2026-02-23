@@ -38,6 +38,7 @@ function createLightbox() {
    lightBox.appendChild(lbPrev);
    lbPrev.id = "lbPrev";
    lbPrev.innerHTML = "&#9664;";
+   lbPrev.onclick = showPrev;
    // Design the lightbox next button
 
    lightBox.appendChild(lbNext);
@@ -65,6 +66,12 @@ function createLightbox() {
    function showNext() {
       lbImages.appendChild(lbImages.firstElementChild);
       (currentImg < imgCount) ? currentImg++ : currentImg = 1;
+      lbCounter.textContent = currentImg + " / " + imgCount;
+   }
+
+   function showPrev() {
+      lbImages.insertBefore(lbImages.lastElementChild, lbImages.firstElementChild);
+      (currentImg > 1) ? currentImg-- : currentImg = imgCount;
       lbCounter.textContent = currentImg + " / " + imgCount;
    }
 }
